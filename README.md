@@ -1,5 +1,3 @@
-# Retail Analytics — ETL, EDA y análisis de comportamiento de clientes con Python, SQL y PostgreSQL
-
 # 🛒 Análisis de Comportamiento y Retención en Retail
 
 **Un enfoque Data-Driven para la optimización del revenue y la fidelización de clientes.**
