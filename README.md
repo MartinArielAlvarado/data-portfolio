@@ -5,6 +5,8 @@
 ## 🎯 Contexto del Proyecto
 Este proyecto analiza un dataset transaccional de un comercio minorista con el objetivo de entender mejor los hábitos de consumo. A través del análisis de datos históricos, se busca identificar en qué momentos se concentra la mayor actividad, cómo se componen los ingresos por categoría y evaluar el estado de la retención de usuarios mediante un modelo RFM.
 
+Evolución del Proyecto: La versión inicial se desarrolló como un análisis exploratorio ad-hoc utilizando Python (Pandas). Para escalar la solución y permitir el consumo interactivo por parte de stakeholders, la arquitectura evolucionó hacia un modelo de Inteligencia de Negocios. Se implementó un modelo de datos dimensional (Star Schema) consumido a través de Excel (Power Query/Pivot) y dashboards interactivos en Power BI.
+
 ## 🛠️ Stack Tecnológico
 * **Procesamiento y Análisis:** Python (Pandas), SQL, Excel
 * **Visualización de Datos:** Matplotlib, Seaborn (`seaborn.objects`), Power BI
@@ -27,9 +29,15 @@ Este proyecto analiza un dataset transaccional de un comercio minorista con el o
 retail-transactions-analysis/
 │
 ├── data/
-│   └── raw/                   # Dataset original
+│   ├── raw/                   # Dataset original
+│   └── processed/             # Dataset limpio listo para BI
+├── dashboards/
+│   ├── reporte_comercial.pbix # Archivo de Power BI
+│   └── analisis_ad_hoc.xlsx   # Archivo Excel con Pareto y Pivot Tables
 ├── notebooks/
 │   └── analisis_visual.ipynb  # Código fuente: Limpieza, EDA y Modelo RFM
+├── images/
+│   └── powerbi_dashboard.png  # Captura para mostrar en el README
 ├── README.md
-├── requirements.txt           # Dependencias del entorno
+└── requirements.txt
 └── .gitignore
