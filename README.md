@@ -6,8 +6,8 @@
 Este proyecto analiza un dataset transaccional de un comercio minorista con el objetivo de entender mejor los hábitos de consumo. A través del análisis de datos históricos, se busca identificar en qué momentos se concentra la mayor actividad, cómo se componen los ingresos por categoría y evaluar el estado de la retención de usuarios mediante un modelo RFM.
 
 ## 🛠️ Stack Tecnológico
-* **Procesamiento y Análisis:** Python (Pandas), SQL
-* **Visualización de Datos:** Matplotlib, Seaborn (`seaborn.objects`)
+* **Procesamiento y Análisis:** Python (Pandas), SQL, Excel
+* **Visualización de Datos:** Matplotlib, Seaborn (`seaborn.objects`), Power BI
 * **Entorno:** Jupyter Notebook, Git
 
 ---
