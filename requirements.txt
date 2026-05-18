@@ -1,9 +1,7 @@
 pandas
 matplotlib
-seaborn.objects
+seaborn
 jupyter
-power bi
-postgresql
-sqlalquemy
-pathlib
+SQLAlchemy
+psycopg2-binary
 python-dotenv
