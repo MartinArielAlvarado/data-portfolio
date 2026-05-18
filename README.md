@@ -81,7 +81,7 @@ git clone [https://github.com/MartinArielAlvarado/retail-transactions-analysis.g
 cd retail-transactions-analysis
 
 # Crear y activar el entorno virtual (recomendado)
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # En Windows usar: venv\Scripts\activate
 
 # Instalar dependencias
