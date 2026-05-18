@@ -81,7 +81,7 @@ git clone [https://github.com/MartinArielAlvarado/retail-transactions-analysis.g
 cd retail-transactions-analysis
 
 # Crear y activar el entorno virtual (recomendado)
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate  # En Windows usar: venv\Scripts\activate
 
 # Instalar dependencias
@@ -113,7 +113,7 @@ psql -U tu_usuario_postgres -d transactions_db -f database/db_setup/archivo_de_c
 Con la base de datos estructurada y el entorno virtual activado, ejecutar el orquestador principal. Este script extraerá los datos en bruto, aplicará las transformaciones (incluyendo validación de claves primarias) y cargará los registros en PostgreSQL mediante SQLAlchemy:
 
 ```bash
-python3 src/main.py
+python src/main.py
 ```
 **5. Visualización en Power BI:**
 
