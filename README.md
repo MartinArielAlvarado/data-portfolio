@@ -63,3 +63,57 @@ retail-transactions-analysis/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
+---
+
+## 🚀 Cómo ejecutar este proyecto localmente
+
+### Requisitos Previos
+* **Python 3.8+**
+* **PostgreSQL** instalado y ejecutándose localmente.
+
+### Pasos de Instalación y Ejecución
+
+**1. Clonar el repositorio y preparar el entorno:**
+```bash
+git clone [https://github.com/MartinArielAlvarado/retail-transactions-analysis.git](https://github.com/MartinArielAlvarado/retail-transactions-analysis.git)
+cd retail-transactions-analysis
+
+# Crear y activar el entorno virtual (recomendado)
+python -m venv venv
+source venv/bin/activate  # En Windows usar: venv\Scripts\activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+**2. Configurar las variables de entorno:**
+
+Para proteger las credenciales de conexion a la base de datos, el proyecto utiliza variables de entorno:
+* Crear un archivo .env en la raiz del proyecto guiandose por .env.example incluido en el repositorio y completandolo con la configuracion local de PostgreSQL.
+
+**3. Crear la Base de Datos y el Esquema:**
+
+Antes de correr el pipeline en Python, es necesario preparar la estructura en PostgreSQL.
+
+* Primero, crear la base de datos en blanco desde la terminal (WSL/Ubuntu o la terminal de tu sistema):
+
+```bash
+psql -U tu_usuario_postgres -c "CREATE DATABASE transactions_db;"
+
+* Luego, construir el esquema en estrella (Star Schema) ejecutando los scripts SQL ubicados en database/db_setup/ contra esa nueva base de datos:
+
+```bash
+psql -U tu_usuario_postgres -d transactions_db -f database/db_setup/archivo_de_creacion.sql
+
+(seguir el orden de ejecucion)
+
+**4. Ejecutar el Pipeline ETL:**
+
+Con la base de datos estructurada y el entorno virtual activado, ejecutar el orquestador principal. Este script extraerá los datos en bruto, aplicará las transformaciones (incluyendo validación de claves primarias) y cargará los registros en PostgreSQL mediante SQLAlchemy:
+
+```bash
+python3 src/main.py
+
+**5. Visualización en Power BI:**
+
+Una vez que el script de Python finalice exitosamente y la base de datos esté poblada, abrir el archivo dashboards/analisis_transacciones.pbix. Se debe actualizar las credenciales de origen de datos en Power BI (ingresando tu usuario y contraseña de PostgreSQL local) para que los gráficos consuman la información recién procesada.
