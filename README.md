@@ -63,6 +63,7 @@ retail-transactions-analysis/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ---
 
