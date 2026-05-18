@@ -86,7 +86,7 @@ source venv/bin/activate  # En Windows usar: venv\Scripts\activate
 
 # Instalar dependencias
 pip install -r requirements.txt
-
+```
 **2. Configurar las variables de entorno:**
 
 Para proteger las credenciales de conexion a la base de datos, el proyecto utiliza variables de entorno:
@@ -100,12 +100,12 @@ Antes de correr el pipeline en Python, es necesario preparar la estructura en Po
 
 ```bash
 psql -U tu_usuario_postgres -c "CREATE DATABASE transactions_db;"
-
+```
 * Luego, construir el esquema en estrella (Star Schema) ejecutando los scripts SQL ubicados en database/db_setup/ contra esa nueva base de datos:
 
 ```bash
 psql -U tu_usuario_postgres -d transactions_db -f database/db_setup/archivo_de_creacion.sql
-
+```
 (seguir el orden de ejecucion)
 
 **4. Ejecutar el Pipeline ETL:**
@@ -114,7 +114,7 @@ Con la base de datos estructurada y el entorno virtual activado, ejecutar el orq
 
 ```bash
 python3 src/main.py
-
+```
 **5. Visualización en Power BI:**
 
 Una vez que el script de Python finalice exitosamente y la base de datos esté poblada, abrir el archivo dashboards/analisis_transacciones.pbix. Se debe actualizar las credenciales de origen de datos en Power BI (ingresando tu usuario y contraseña de PostgreSQL local) para que los gráficos consuman la información recién procesada.
