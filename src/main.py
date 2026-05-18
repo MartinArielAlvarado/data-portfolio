@@ -1,3 +1,4 @@
+import os
 import extract
 import transform
 import load
@@ -5,19 +6,30 @@ import load
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def validar_tabla(tabla1: pd.DataFrame, columna_key: str)->None:
 
     try:
         assert len(tabla1) == tabla1[columna_key].nunique()
     except AssertionError:
-        print(f"Error DQ: Claves duplicadas")
+        print(f"Error DQ: Claves duplicadas en la columna {columna_key}")
         raise
 
 
 def run_pipeline()->None:
 
-    motor: Engine = create_engine('postgresql://martin:admin123@localhost:5432/transactions_db')
+    db_user = os.getenv("DB_USER")
+    db_password = os.getenv("DB_PASSWORD")
+    db_host = os.getenv("DB_HOST")
+    db_port = os.getenv("DB_PORT")
+    db_name = os.getenv("DB_NAME")
+
+    string_conection = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+
+    motor: Engine = create_engine(string_conection)
 
     datos_crudos: pd.DataFrame = extract.extraer_datos_crudos()
     dim_product: pd.DataFrame = transform.crear_dim_product(datos_crudos)

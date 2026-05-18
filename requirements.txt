@@ -2,5 +2,8 @@ pandas
 matplotlib
 seaborn.objects
 jupyter
-excel
 power bi
+postgresql
+sqlalquemy
+pathlib
+python-dotenv
