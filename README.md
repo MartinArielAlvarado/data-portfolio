@@ -3,11 +3,19 @@
 **Proyecto integral de Business Intelligence enfocado en el análisis de transacciones de retail, ingeniería de datos y visualización para la toma de decisiones estratégicas.**
 
 ## 🎯 Contexto del Proyecto
-Este proyecto simula un entorno corporativo real y se divide en 3 fases principales:
+Este proyecto simula un entorno corporativo real: Una empresa de retail necesita automatizar análisis de transacciones para tomar decisiones sobre horarios de promoción, segmentación de clientes y anomalías de margen.
+
+Se divide en 3 fases principales:
 
 1. **Análisis Exploratorio (EDA):** Análisis profundo del dataset transaccional (tipo "sábana") en Jupyter Notebook utilizando Python (Pandas) y visualizaciones con `seaborn.objects` orientado a responder 5 preguntas de negocio (estan en el notebook). Se integraron consultas en SQL (PostgreSQL/DBeaver) ademas de Pandas para validar la calidad de datos, tipos, estadística descriptiva y descubrir patrones de consumo.
 2. **Data Warehouse y Proceso ETL:** Para optimizar las consultas analíticas, se desnormalizó el dataset original migrándolo hacia un modelo de **Esquema Estrella (Star Schema)**. El ETL fue desarrollado modularmente en Python con 4 scripts independientes (Extracción, Transformación, Carga y un `main.py` orquestador) procesando +100.000 registros de forma eficiente. Desarrollado en un entorno WSL (Ubuntu) utilizando VSCode y Git.
 3. **Business Intelligence (BI):** Desarrollo de un dashboard interactivo de 3 páginas en Power BI para el monitoreo de KPIs operativos y estratégicos, implementando modelado DAX avanzado.
+
+## ✅ Lo Que Demuestro
+- Implementación de **Star Schema** (modelo dimensional profesional)
+- **ETL modularizado** en Python (escalable, mantenible, testeable)
+- **Análisis de negocio aplicado**: RFM, Pareto, análisis temporal
+- **Pipeline completo**: extracción → transformación → carga → visualización
 
 ## 🛠️ Stack Tecnológico
 * **Lenguajes:** Python (Pandas), SQL, DAX
